@@ -19,7 +19,8 @@ const AddToDoItem = ({ addTask }: { addTask: (task: Task) => void }) => {
   };
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
+    const { value } = e.target;
+    setInputValue(value);
   };
 
   return (
