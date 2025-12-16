@@ -1,11 +1,22 @@
 import { Task } from "../types";
 
-const ToDoItem = ({ task }: { task: Task }) => {
+const ToDoItem = ({
+  task,
+  handleToggleTask,
+}: {
+  task: Task;
+  handleToggleTask: (taskId: number) => void;
+}) => {
   return (
-    <li className="flex items-center justify-between border-b py-3">
-      <span id={task.id.toString()}>{task.text}</span>
+    <div className="flex justify-evenly border-b py-3">
+      <input
+        type="checkbox"
+        checked={task.completed}
+        onChange={() => handleToggleTask(task.id)}
+      />
+      <span className="ml-2">{task.text}</span>
       <button className="text-slate-400 text-sm">✕</button>
-    </li>
+    </div>
   );
 };
 

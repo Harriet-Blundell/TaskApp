@@ -25,12 +25,33 @@ const Home = () => {
     setTasks([...tasks, newTask]);
   };
 
+  const handleToggleTask = (taskId: number) => {
+    const updatedTasks = tasks.map((task) => {
+      console.log(task.id, taskId);
+      if (task.id === taskId) {
+        return { ...task, completed: !task.completed };
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+  };
+
+  const completedTasks = tasks.filter((task) => {
+    return task.completed;
+  });
+
+  const numOfTasks = tasks.length;
+  const numOfCompletedTasks = completedTasks.length;
+
   return (
     <div className="md: p-4">
       <div className="flex flex-col justify-center">
-        <Header />
+        <Header
+          numOfTasks={numOfTasks}
+          numOfCompletedTasks={numOfCompletedTasks}
+        />
         <AddToDoItem addTask={handleAddTask} />
-        <ToDoList tasks={tasks} />
+        <ToDoList tasks={tasks} handleToggleTask={handleToggleTask} />
       </div>
     </div>
   );
