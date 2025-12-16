@@ -27,7 +27,6 @@ const Home = () => {
 
   const handleToggleTask = (taskId: number) => {
     const updatedTasks = tasks.map((task) => {
-      console.log(task.id, taskId);
       if (task.id === taskId) {
         return { ...task, completed: !task.completed };
       }
@@ -35,6 +34,11 @@ const Home = () => {
     });
     setTasks(updatedTasks);
   };
+
+  const handleDeleteTask = (taskId: number) => {
+    const deletedTasks = tasks.filter((task) => task.id !== taskId);
+    setTasks(deletedTasks);
+  }
 
   const completedTasks = tasks.filter((task) => {
     return task.completed;
