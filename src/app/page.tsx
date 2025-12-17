@@ -6,7 +6,7 @@ import ToDoList from "@/components/ToDoList";
 import AddToDoItem from "@/components/AddToDoItem";
 import { useEffect, useState } from "react";
 import { Task } from "@/types";
-import { fetchTasks, postTask } from "@/utils/api-requests";
+import { fetchTasks, postTask, updateTask } from "@/utils/api-requests";
 
 const Home = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -19,19 +19,26 @@ const Home = () => {
     loadTasks();
   }, []);
 
-  const handleAddTask = (newTask: Task) => {
-    postTask(newTask);
+  const handleAddTask = async (newTask: Task) => {
+    await postTask(newTask);
     setTasks([...tasks, newTask]);
   };
 
-  const handleToggleTask = (taskId: number) => {
-    const updatedTasks = tasks.map((task) => {
-      if (task.id === taskId) {
-        return { ...task, completed: !task.completed };
-      }
-      return task;
-    });
-    setTasks(updatedTasks);
+  const handleToggleTask = async (taskId: number) => {
+    const task = tasks.find((task) => task.id === taskId);
+
+    if (task) {
+      await updateTask(!task.completed, taskId);
+      const updatedTasks = tasks.map((t) => {
+        return t.id === taskId
+          ? {
+              ...t,
+              completed: !t.completed,
+            }
+          : t;
+      });
+      setTasks(updatedTasks);
+    }
   };
 
   // const handleDeleteTask = (taskId: number) => {
