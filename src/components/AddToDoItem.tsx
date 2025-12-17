@@ -1,7 +1,11 @@
 import { Task } from "@/types";
 import { useState } from "react";
 
-const AddToDoItem = ({ addTask }: { addTask: (task: Task) => void }) => {
+const AddToDoItem = ({
+  handleAddTask,
+}: {
+  handleAddTask: (task: Task) => void;
+}) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -10,11 +14,13 @@ const AddToDoItem = ({ addTask }: { addTask: (task: Task) => void }) => {
 
     const newTask: Task = {
       id: Date.now(),
-      text: inputValue,
+      title: inputValue,
       completed: false,
+      priority: "low",
+      created_at: Date.now().toString(),
     };
 
-    addTask(newTask);
+    handleAddTask(newTask);
     setInputValue("");
   };
 

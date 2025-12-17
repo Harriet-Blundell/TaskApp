@@ -14,7 +14,7 @@ const ToDoItem = ({
         checked={task.completed}
         onChange={() => handleToggleTask(task.id)}
       />
-      <span className="ml-2">{task.text}</span>
+      <span className="ml-2">{task.title}</span>
       <button className="text-slate-400 text-sm">✕</button>
     </div>
   );
