@@ -10,7 +10,7 @@ export const fetchTasks = async () => {
 
 export const postTask = async (body: Task) => {
     const response = await fetch(baseURL, {
-        method: "post",
+        method: "POST",
         headers: {
             'Content-Type': 'application/json',
         },
@@ -21,7 +21,7 @@ export const postTask = async (body: Task) => {
 
 export const updateTask = async (completed: boolean, taskId: number) => {
     const response = await fetch(`${baseURL}/${taskId}`, {
-        method: "patch",
+        method: "PATCH",
         headers: {
             'Content-Type': 'application/json',
         },
