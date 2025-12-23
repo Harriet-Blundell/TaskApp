@@ -10,7 +10,7 @@ export const fetchTasks = async () => {
 
 export const postTask = async (body: Task) => {
     const response = await fetch(baseURL, {
-        method: "post",
+        method: "POST",
         headers: {
             'Content-Type': 'application/json',
         },
@@ -21,14 +21,21 @@ export const postTask = async (body: Task) => {
 
 export const updateTask = async (completed: boolean, taskId: number) => {
     const response = await fetch(`${baseURL}/${taskId}`, {
-        method: "patch",
+        method: "PATCH",
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ completed })
     })
-
     return response.json();
 }
 
-// Add a delete call
+export const deleteTask = async (taskId: number) => {
+    const response = await fetch(`${baseURL}/${taskId}`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    return response.json();
+}
