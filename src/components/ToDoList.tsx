@@ -12,7 +12,7 @@ const ToDoList = ({
 }) => {
   return (
     <div className="flex flex-col">
-      {tasks.map((task) => (
+      {tasks?.map((task) => (
         <ToDoItem
           key={task.id}
           task={task}

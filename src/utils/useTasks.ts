@@ -4,6 +4,9 @@ import { deleteTask, fetchTasks, postTask, updateTask } from "./api-requests";
 
 export const useTasks = () => {
     const [tasks, setTasks] = useState<Task[]>([]);
+    const [sortBy, setSortBy] = useState<string>("");
+
+    
 
     useEffect(() => {
         const loadTasks = async () => {
@@ -41,12 +44,12 @@ export const useTasks = () => {
         setTasks(deletedTasks);
     };
 
-    const completedTasks = tasks.filter((task) => {
+    const completedTasks = tasks?.filter((task) => {
         return task.completed;
     });
 
-    const numOfTasks = tasks.length;
-    const numOfCompletedTasks = completedTasks.length;
+    const numOfTasks = tasks?.length;
+    const numOfCompletedTasks = completedTasks?.length;
 
     return {
         tasks,
