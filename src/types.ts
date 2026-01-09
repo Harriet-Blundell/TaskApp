@@ -5,3 +5,5 @@ export interface Task {
     priority: string;
     created_at: string;
 }
+
+export type handleSelectedPriorityOption = (option: string) => void;
