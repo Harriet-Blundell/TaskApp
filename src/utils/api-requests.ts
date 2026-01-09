@@ -27,8 +27,15 @@ export const updateTask = async (completed: boolean, taskId: number) => {
         },
         body: JSON.stringify({ completed })
     })
-
     return response.json();
 }
 
-// Add a delete call
+export const deleteTask = async (taskId: number) => {
+    const response = await fetch(`${baseURL}/${taskId}`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    return response.json();
+}

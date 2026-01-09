@@ -4,21 +4,22 @@ import { Task } from "../types";
 const ToDoList = ({
   tasks,
   handleToggleTask,
+  handleDeleteTask,
 }: {
   tasks: Task[];
   handleToggleTask: (taskId: number) => void;
+  handleDeleteTask: (taskId: number) => void;
 }) => {
   return (
-    <div className="flex-1 overflow-y-auto">
-      <ul>
-        {tasks.map((task) => (
-          <ToDoItem
-            key={task.id}
-            task={task}
-            handleToggleTask={handleToggleTask}
-          />
-        ))}
-      </ul>
+    <div className="flex flex-col">
+      {tasks?.map((task) => (
+        <ToDoItem
+          key={task.id}
+          task={task}
+          handleToggleTask={handleToggleTask}
+          handleDeleteTask={handleDeleteTask}
+        />
+      ))}
     </div>
   );
 };

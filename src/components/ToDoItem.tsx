@@ -3,19 +3,37 @@ import { Task } from "../types";
 const ToDoItem = ({
   task,
   handleToggleTask,
+  handleDeleteTask,
 }: {
   task: Task;
   handleToggleTask: (taskId: number) => void;
+  handleDeleteTask: (taskId: number) => void;
 }) => {
   return (
-    <div className="flex justify-evenly border-b py-3">
+    <div className="flex items-center justify-between mb-5">
       <input
         type="checkbox"
         checked={task.completed}
         onChange={() => handleToggleTask(task.id)}
+        className="w-4 h-4"
       />
-      <span className="ml-2">{task.title}</span>
-      <button className="text-slate-400 text-sm">✕</button>
+      <span className="text-left">{task.title}</span>
+      <button className="group" onClick={() => handleDeleteTask(task.id)}>
+        <img
+          width="24"
+          height="24"
+          src="https://img.icons8.com/material-outlined/24/FA5252/cancel--v1.png"
+          alt="delete"
+          className="cursor-pointer block group-hover:hidden"
+        />
+        <img
+          width="24"
+          height="24"
+          src="https://img.icons8.com/material-rounded/24/FA5252/cancel--v1.png"
+          alt="delete hover"
+          className="hidden group-hover:block"
+        />
+      </button>
     </div>
   );
 };
