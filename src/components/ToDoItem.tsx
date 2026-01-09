@@ -17,6 +17,7 @@ const ToDoItem = ({
         onChange={() => handleToggleTask(task.id)}
         className="w-4 h-4"
       />
+      <p>Priority: {task.priority}</p>
       <span className="text-left">{task.title}</span>
       <button className="group" onClick={() => handleDeleteTask(task.id)}>
         <img
@@ -39,3 +40,5 @@ const ToDoItem = ({
 };
 
 export default ToDoItem;
+
+// List priority in the to do list
