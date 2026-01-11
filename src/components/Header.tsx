@@ -1,5 +1,5 @@
-import { useState } from "react";
 import Dropdown from "./Dropdown";
+import { handleSelectedPriorityOption } from "./Sorting";
 
 const Header = ({
   numOfTasks = 0,
@@ -8,12 +8,6 @@ const Header = ({
   numOfTasks: number;
   numOfCompletedTasks: number;
 }) => {
-  const [selectedPriorityOption, setSelectedPriorityOption] =
-    useState<string>("");
-
-  const handleSelectedPriorityOption = (option: string) => {
-    console.log("Selected option:", option);
-  };
 
   return (
     <>
