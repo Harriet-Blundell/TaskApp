@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { handleSelectedPriorityOption } from "@/types";
+import { handleSelectedPriorityOption } from "./Sorting";
 const sortByImg = "../sort-by.png";
 
 const Dropdown = ({
   handleSelectedPriorityOption,
 }: {
-  handleSelectedPriorityOption: handleSelectedPriorityOption;
+  handleSelectedPriorityOption: (option: string) => void;
 }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 

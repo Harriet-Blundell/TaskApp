@@ -12,6 +12,7 @@ const Home = () => {
     handleAddTask,
     handleToggleTask,
     handleDeleteTask,
+    handleSortByPriority,
     numOfTasks,
     numOfCompletedTasks,
   } = useTasks();
@@ -22,6 +23,7 @@ const Home = () => {
         <Header
           numOfTasks={numOfTasks}
           numOfCompletedTasks={numOfCompletedTasks}
+          onSortByPriority={handleSortByPriority}
         />
         <AddToDoItem handleAddTask={handleAddTask} />
         <ToDoList

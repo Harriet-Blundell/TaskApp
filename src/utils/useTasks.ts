@@ -1,6 +1,7 @@
 import { Task } from "@/types";
 import { useEffect, useState } from "react";
 import { deleteTask, fetchTasks, postTask, updateTask } from "./api-requests";
+import { handleSelectedPriorityOption } from "@/components/Sorting";
 
 export const useTasks = () => {
     const [tasks, setTasks] = useState<Task[]>([]);
@@ -15,6 +16,12 @@ export const useTasks = () => {
         };
         loadTasks();
     }, []);
+
+    const handleSortByPriority = (option: string) => {
+        setSortBy(option);
+        const sortedTasks = handleSelectedPriorityOption(tasks, option);
+        setTasks(sortedTasks);
+    };
 
     const handleAddTask = async (newTask: Task) => {
         await postTask(newTask);
@@ -56,6 +63,7 @@ export const useTasks = () => {
         handleAddTask,
         handleToggleTask,
         handleDeleteTask,
+        handleSortByPriority,
         numOfTasks,
         numOfCompletedTasks
     };

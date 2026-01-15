@@ -1,12 +1,13 @@
 import Dropdown from "./Dropdown";
-import { handleSelectedPriorityOption } from "./Sorting";
 
 const Header = ({
   numOfTasks = 0,
   numOfCompletedTasks = 0,
+  onSortByPriority,
 }: {
   numOfTasks: number;
   numOfCompletedTasks: number;
+  onSortByPriority: (option: string) => void;
 }) => {
 
   return (
@@ -21,7 +22,7 @@ const Header = ({
         </p>
         {
           <Dropdown
-            handleSelectedPriorityOption={handleSelectedPriorityOption}
+            handleSelectedPriorityOption={onSortByPriority}
           />
         }
       </div>
