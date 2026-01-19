@@ -7,6 +7,7 @@ const AddToDoItem = ({
   handleAddTask: (task: Task) => void;
 }) => {
   const [inputValue, setInputValue] = useState("");
+  const [priority, setPriority] = useState("low");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,7 +17,7 @@ const AddToDoItem = ({
       id: Date.now(),
       title: inputValue,
       completed: false,
-      priority: "low",
+      priority: priority,
       created_at: Date.now().toString(),
     };
 
@@ -29,6 +30,10 @@ const AddToDoItem = ({
     setInputValue(value);
   };
 
+  const handlePriorityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setPriority(e.target.value);
+  };
+
   return (
     <form className="my-4 space-y-2" onSubmit={handleSubmit}>
       <input
@@ -37,6 +42,15 @@ const AddToDoItem = ({
         onChange={handleOnChange}
         value={inputValue}
       />
+      <select
+        className="w-full rounded-xl border border-slate-300 px-3 py-2"
+        value={priority}
+        onChange={handlePriorityChange}
+      >
+        <option value="high">High Priority</option>
+        <option value="medium">Medium Priority</option>
+        <option value="low">Low Priority</option>
+      </select>
       <button
         type="submit"
         className="w-full bg-slate-900 text-white py-2 rounded-xl"

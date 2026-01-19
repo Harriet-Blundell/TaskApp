@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import RootLayout from "./layout";
 import ToDoList from "@/components/ToDoList";
@@ -16,16 +17,28 @@ const Home = () => {
     numOfCompletedTasks,
   } = useTasks();
 
+  const [sortedTasks, setSortedTasks] = useState(tasks);
+
+  const handleSortedTasksChange = (newSortedTasks: any[]) => {
+    setSortedTasks(newSortedTasks);
+  };
+
+  useEffect(() => {
+    setSortedTasks(tasks);
+  }, [tasks]);
+
   return (
     <div className="md: p-4">
       <div className="flex flex-col justify-center">
         <Header
           numOfTasks={numOfTasks}
           numOfCompletedTasks={numOfCompletedTasks}
+          tasks={sortedTasks}
+          onSortedTasksChange={handleSortedTasksChange}
         />
         <AddToDoItem handleAddTask={handleAddTask} />
         <ToDoList
-          tasks={tasks}
+          tasks={sortedTasks}
           handleToggleTask={handleToggleTask}
           handleDeleteTask={handleDeleteTask}
         />
