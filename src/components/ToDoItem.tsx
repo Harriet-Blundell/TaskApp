@@ -11,6 +11,7 @@ const ToDoItem = ({
 }) => {
   return (
     <div className="flex items-center justify-between mb-5">
+      
       <input
         type="checkbox"
         checked={task.completed}

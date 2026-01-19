@@ -31,7 +31,7 @@ w-32"
         >
           {" "}
            <button
-             className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
              onClick={() => {
                handleSelectedPriorityOption("High");
                setDropdownOpen(false);
@@ -40,8 +40,7 @@ w-32"
              High
            </button>{" "}
            <button
-             className="block w-full px-4 py-2
-text-left hover:bg-gray-100"
+             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
              onClick={() => {
                handleSelectedPriorityOption("Medium");
                setDropdownOpen(false);
@@ -50,7 +49,7 @@ text-left hover:bg-gray-100"
              Medium
            </button>{" "}
            <button
-             className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
              onClick={() => {
                handleSelectedPriorityOption("Low");
                setDropdownOpen(false);
