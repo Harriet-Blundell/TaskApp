@@ -36,6 +36,7 @@ const AddToDoItem = ({
 
   return (
     <form className="my-4 space-y-2" onSubmit={handleSubmit}>
+      <div className="flex">
       <input
         className="w-full rounded-xl border border-slate-300 px-3 py-2"
         placeholder="What do you need to do?"
@@ -43,7 +44,7 @@ const AddToDoItem = ({
         value={inputValue}
       />
       <select
-        className="w-full rounded-xl border border-slate-300 px-3 py-2"
+        className=" rounded-xl border border-slate-300 px-3 py-2 ml-2"
         value={priority}
         onChange={handlePriorityChange}
       >
@@ -51,6 +52,7 @@ const AddToDoItem = ({
         <option value="medium">Medium Priority</option>
         <option value="low">Low Priority</option>
       </select>
+      </div>
       <button
         type="submit"
         className="w-full bg-slate-900 text-white py-2 rounded-xl"
