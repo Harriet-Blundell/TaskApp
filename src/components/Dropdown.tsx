@@ -3,7 +3,7 @@ import { handleSelectedPriorityOption } from "@/types";
 const sortByImg = "../sort-by.png";
 
 const Dropdown = ({
-  handleSelectedPriorityOption
+  handleSelectedPriorityOption,
 }: {
   handleSelectedPriorityOption: handleSelectedPriorityOption;
 }) => {
@@ -30,23 +30,34 @@ const Dropdown = ({
 w-32"
         >
           {" "}
-          <button
-            className="block w-full px-4 py-2 text-left hover:bg-gray-100"
-            onClick={() => {
-              handleSelectedPriorityOption("High");
-            }}
-          >
-            High
-          </button>{" "}
-          <button
-            className="block w-full px-4 py-2
+           <button
+             className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+             onClick={() => {
+               handleSelectedPriorityOption("High");
+               setDropdownOpen(false);
+             }}
+           >
+             High
+           </button>{" "}
+           <button
+             className="block w-full px-4 py-2
 text-left hover:bg-gray-100"
-          >
-            Medium
-          </button>{" "}
-          <button className="block w-full px-4 py-2 text-left hover:bg-gray-100">
-            Low
-          </button>{" "}
+             onClick={() => {
+               handleSelectedPriorityOption("Medium");
+               setDropdownOpen(false);
+             }}
+           >
+             Medium
+           </button>{" "}
+           <button
+             className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+             onClick={() => {
+               handleSelectedPriorityOption("Low");
+               setDropdownOpen(false);
+             }}
+           >
+             Low
+           </button>{" "}
         </div>
       )}
     </div>
