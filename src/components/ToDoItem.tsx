@@ -10,32 +10,42 @@ const ToDoItem = ({
   handleDeleteTask: (taskId: number) => void;
 }) => {
   return (
-    <div className="flex items-center justify-between mb-5">
-      
-      <input
-        type="checkbox"
-        checked={task.completed}
-        onChange={() => handleToggleTask(task.id)}
-        className="w-4 h-4"
-      />
-      <p>Priority: {task.priority}</p>
-      <span className="text-left">{task.title}</span>
-      <button className="group" onClick={() => handleDeleteTask(task.id)}>
-        <img
-          width="24"
-          height="24"
-          src="https://img.icons8.com/material-outlined/24/FA5252/cancel--v1.png"
-          alt="delete"
-          className="cursor-pointer block group-hover:hidden"
+    <div className="flex justify-between py-2 px-2 rounded-xl">
+      <div className="flex">
+        <button
+          className="group w-20"
+          onClick={() => handleDeleteTask(task.id)}
+        >
+          <img
+            width="20"
+            height="20"
+            src="https://img.icons8.com/material-outlined/24/FA5252/cancel--v1.png"
+            alt="delete"
+            className="cursor-pointer block group-hover:hidden"
+          />
+          <img
+            width="20"
+            height="20"
+            src="https://img.icons8.com/material-rounded/24/FA5252/cancel--v1.png"
+            alt="delete hover"
+            className="hidden group-hover:block"
+          />
+        </button>
+
+        <span className="pl-[5vw]">
+          {task.title[0].toUpperCase() + task.title.slice(1)}
+        </span>
+      </div>
+
+      <div className="flex justify-between">
+        <p className="w-35 text-left"> {task.priority}</p>
+        <input
+          type="checkbox"
+          checked={task.completed}
+          onChange={() => handleToggleTask(task.id)}
+          className="w-25 w-4 h-4 "
         />
-        <img
-          width="24"
-          height="24"
-          src="https://img.icons8.com/material-rounded/24/FA5252/cancel--v1.png"
-          alt="delete hover"
-          className="hidden group-hover:block"
-        />
-      </button>
+      </div>
     </div>
   );
 };
