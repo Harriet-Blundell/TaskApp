@@ -38,13 +38,13 @@ const AddToDoItem = ({
     <form className="my-4 space-y-2" onSubmit={handleSubmit}>
       <div className="flex">
       <input
-        className="w-full rounded-xl border border-slate-300 px-3 py-2"
+        className="w-full rounded-xl border border-slate-300 px-3 py-2 text-[12px]"
         placeholder="What do you need to do?"
         onChange={handleOnChange}
         value={inputValue}
       />
       <select
-        className=" rounded-xl border border-slate-300 px-3 py-2 ml-2"
+        className="border rounded-xl border-slate-300 text-slate-400 px-3 py-2 ml-2 text-[12px] appearance-none"
         value={priority}
         onChange={handlePriorityChange}
       >

@@ -10,40 +10,40 @@ const ToDoItem = ({
   handleDeleteTask: (taskId: number) => void;
 }) => {
   return (
-    <div className="flex justify-between py-2 px-2 rounded-xl">
-      <div className="flex">
+    <div className="flex py-2 px-2 rounded-xl justify-between text-[10px] hover:bg-slate-100">
+      <div className="flex w-3/4">
         <button
-          className="group w-20"
+          className="group w-1/4"
           onClick={() => handleDeleteTask(task.id)}
         >
           <img
-            width="20"
-            height="20"
+            width="15"
+            height="15"
             src="https://img.icons8.com/material-outlined/24/FA5252/cancel--v1.png"
             alt="delete"
             className="cursor-pointer block group-hover:hidden"
           />
           <img
-            width="20"
-            height="20"
+            width="15"
+            height="15"
             src="https://img.icons8.com/material-rounded/24/FA5252/cancel--v1.png"
             alt="delete hover"
             className="hidden group-hover:block"
           />
         </button>
 
-        <span className="pl-[5vw]">
+        <p className="flex w-3/4 text-left">
           {task.title[0].toUpperCase() + task.title.slice(1)}
-        </span>
+        </p>
       </div>
 
-      <div className="flex justify-between">
-        <p className="w-35 text-left"> {task.priority}</p>
+      <div className="flex w-1/4">
+        <p className="px-6"> {task.priority[0].toUpperCase()}</p>
         <input
           type="checkbox"
           checked={task.completed}
           onChange={() => handleToggleTask(task.id)}
-          className="w-25 w-4 h-4 "
+          className="w-5 h-4 ml-auto"
         />
       </div>
     </div>
