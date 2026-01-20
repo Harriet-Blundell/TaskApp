@@ -10,15 +10,14 @@ const Dropdown = ({
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <div className="dropdown">
+    <div className="dropdown h-0">
       <button
         onClick={() => {
           setDropdownOpen(!dropdownOpen);
         }}
       >
         <img
-          width="24"
-          height="24"
+          width="20"
           src={sortByImg}
           className="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer"
           alt="Sort by"

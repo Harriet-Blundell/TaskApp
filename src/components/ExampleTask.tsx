@@ -1,6 +1,6 @@
 export const TableHeaders = () => {
   return (
-    <div className="flex justify-between bg-slate-100 text-black py-2 px-2 text-[10px] sm:text-sm rounded-xl mb-3">
+    <div className="flex justify-between bg-slate-100 dark:bg-slate-600 dark:text-white text-black py-2 px-2 text-[10px] sm:text-sm rounded-xl mb-3">
       <div className="flex justify-between w-3/4">
         <p className="w-1/4 ">Delete</p>
         <p className="w-3/4">Task</p>

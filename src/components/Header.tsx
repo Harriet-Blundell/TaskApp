@@ -29,7 +29,6 @@ const Header = ({
         To Do List
       </h1>
       <div className="relative">
-        <div></div>
         <p className="text-sm text-slate-500 text-center">
           {numOfTasks} tasks · {numOfCompletedTasks} completed
         </p>

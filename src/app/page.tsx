@@ -28,7 +28,7 @@ const Home = () => {
   }, [tasks]);
 
   return (
-    <div className="md: p-4">
+    <div className="md: p-4 dark:bg-gray-900 min-h-screen dark:text-white">
       <div className="flex flex-col justify-center">
         <Header
           numOfTasks={numOfTasks}

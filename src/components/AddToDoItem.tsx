@@ -38,7 +38,7 @@ const AddToDoItem = ({
     <form className="my-4 space-y-2" onSubmit={handleSubmit}>
       <div className="flex">
       <input
-        className="w-full rounded-xl border border-slate-300 px-3 py-2 text-[12px]"
+        className="w-full rounded-xl border border-slate-300 px-3 text-[12px]"
         placeholder="What do you need to do?"
         onChange={handleOnChange}
         value={inputValue}
@@ -55,7 +55,7 @@ const AddToDoItem = ({
       </div>
       <button
         type="submit"
-        className="w-full bg-slate-900 text-white py-2 rounded-xl"
+        className="w-full mt-2 bg-slate-900 text-white py-2 rounded-xl dark:bg-blue-500"
       >
         Add task
       </button>
