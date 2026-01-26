@@ -4,9 +4,6 @@ import { deleteTask, fetchTasks, postTask, updateTask } from "./api-requests";
 
 export const useTasks = () => {
     const [tasks, setTasks] = useState<Task[]>([]);
-    const [sortBy, setSortBy] = useState<string>("");
-
-    
 
     useEffect(() => {
         const loadTasks = async () => {

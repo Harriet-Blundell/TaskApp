@@ -9,11 +9,14 @@ const ToDoItem = ({
   handleToggleTask: (taskId: number) => void;
   handleDeleteTask: (taskId: number) => void;
 }) => {
+  const title = task.title.replace(/^./, (c) => c.toUpperCase()); // capitalise the first letter and leave the rest untouched
+  const priority = task.priority.replace(/^./, (c) => c.toUpperCase());
+
   return (
     <div className="flex py-2 my-1 px-2 rounded-xl justify-between text-[10px] hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700  sm:text-sm">
       <div className="flex w-3/4">
         <button
-          className="group w-[4rem] pr-5"
+          className="group w-16 pr-5"
           onClick={() => handleDeleteTask(task.id)}
         >
           <img
@@ -32,21 +35,20 @@ const ToDoItem = ({
           />
         </button>
 
-        <p className="flex w-3/4 text-left">
-
-          {task.title[0].toUpperCase() + task.title.slice(1)}
-        </p>
+        <p className="flex w-3/4 text-left">{title}</p>
       </div>
 
       <div className="flex w-1/4">
         <p className=" ml-auto my-auto"></p>
-        <span className="inline sm:hidden"> {task.priority[0].toUpperCase()} </span>
-        <span className="hidden sm:inline"> {task.priority}</span>
+        <span className="inline sm:hidden">
+          {task.priority[0].toUpperCase()}
+        </span>
+        <span className="hidden sm:inline"> {priority}</span>
         <input
           type="checkbox"
           checked={task.completed}
           onChange={() => handleToggleTask(task.id)}
-          className="w-[2rem] h-4 ml-auto my-auto sm:mr-2"
+          className="w-8 h-4 ml-auto my-auto sm:mr-2"
         />
       </div>
     </div>
