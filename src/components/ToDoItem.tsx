@@ -10,7 +10,7 @@ const ToDoItem = ({
   handleDeleteTask: (taskId: number) => void;
 }) => {
   return (
-    <div className="flex py-2 my-1 px-2 rounded-xl justify-between text-[10px] hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700">
+    <div className="flex py-2 my-1 px-2 rounded-xl justify-between text-[10px] hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700  sm:text-sm">
       <div className="flex w-3/4">
         <button
           className="group w-[4rem] pr-5"
@@ -33,17 +33,20 @@ const ToDoItem = ({
         </button>
 
         <p className="flex w-3/4 text-left">
+
           {task.title[0].toUpperCase() + task.title.slice(1)}
         </p>
       </div>
 
       <div className="flex w-1/4">
-        <p className="px-6 ml-auto my-auto"> {task.priority[0].toUpperCase()}</p>
+        <p className=" ml-auto my-auto"></p>
+        <span className="inline sm:hidden"> {task.priority[0].toUpperCase()} </span>
+        <span className="hidden sm:inline"> {task.priority}</span>
         <input
           type="checkbox"
           checked={task.completed}
           onChange={() => handleToggleTask(task.id)}
-          className="w-[2rem] h-4 ml-auto my-auto"
+          className="w-[2rem] h-4 ml-auto my-auto sm:mr-2"
         />
       </div>
     </div>

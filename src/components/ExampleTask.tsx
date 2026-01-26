@@ -6,8 +6,11 @@ export const TableHeaders = () => {
         <p className="">Task</p>
       </div>
       <div className="flex w-1/4">
-        <p className="ml-auto">P</p>
-        <p className="w-[2rem] ml-auto">Done? </p>
+  <p className="px-6 ml-auto">
+  <span className="inline sm:hidden ">P</span>
+  <span className="hidden sm:inline">Priority</span>
+</p>
+        <p className="w-[2rem] ml-auto sm:mr-2">Done? </p>
       </div>
     </div>
   );
