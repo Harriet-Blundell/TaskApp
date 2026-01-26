@@ -1,6 +1,6 @@
 import ToDoItem from "./ToDoItem";
 import { Task } from "../types";
-import { TableHeaders } from "./ExampleTask";
+import { TableHeaders } from "./TableHeaders";
 
 const ToDoList = ({
   tasks,
@@ -11,18 +11,19 @@ const ToDoList = ({
   handleToggleTask: (taskId: number) => void;
   handleDeleteTask: (taskId: number) => void;
 }) => {
-  return (<>
+  return (
+    <>
       <TableHeaders />
-    <div className="flex flex-col ">
-      {tasks?.map((task) => (
-        <ToDoItem
-          key={task.id}
-          task={task}
-          handleToggleTask={handleToggleTask}
-          handleDeleteTask={handleDeleteTask}
-        />
-      ))}
-    </div>
+      <div className="flex flex-col ">
+        {tasks?.map((task) => (
+          <ToDoItem
+            key={task.id}
+            task={task}
+            handleToggleTask={handleToggleTask}
+            handleDeleteTask={handleDeleteTask}
+          />
+        ))}
+      </div>
     </>
   );
 };

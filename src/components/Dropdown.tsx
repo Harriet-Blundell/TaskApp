@@ -29,33 +29,33 @@ const Dropdown = ({
 w-32"
         >
           {" "}
-           <button
-             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
-             onClick={() => {
-               handleSelectedPriorityOption("High");
-               setDropdownOpen(false);
-             }}
-           >
-             High
-           </button>{" "}
-           <button
-             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
-             onClick={() => {
-               handleSelectedPriorityOption("Medium");
-               setDropdownOpen(false);
-             }}
-           >
-             Medium
-           </button>{" "}
-           <button
-             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
-             onClick={() => {
-               handleSelectedPriorityOption("Low");
-               setDropdownOpen(false);
-             }}
-           >
-             Low
-           </button>{" "}
+          <button
+            className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
+            onClick={() => {
+              handleSelectedPriorityOption("High");
+              setDropdownOpen(false);
+            }}
+          >
+            High
+          </button>{" "}
+          <button
+            className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
+            onClick={() => {
+              handleSelectedPriorityOption("Medium");
+              setDropdownOpen(false);
+            }}
+          >
+            Medium
+          </button>{" "}
+          <button
+            className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
+            onClick={() => {
+              handleSelectedPriorityOption("Low");
+              setDropdownOpen(false);
+            }}
+          >
+            Low
+          </button>{" "}
         </div>
       )}
     </div>
