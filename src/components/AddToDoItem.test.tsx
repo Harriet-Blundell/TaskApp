@@ -19,7 +19,7 @@ describe("AddToDoItem Component", () => {
     render(<AddToDoItem handleAddTask={mockHandleAddTask} />);
     const inputElement = screen.getByRole("textbox");
     const addTaskButton = screen.getByRole("button", { name: /Add task/i });
-    addTaskButton.click();
+    fireEvent.click(addTaskButton);
     expect(inputElement).toBeInvalid();
   });
 
