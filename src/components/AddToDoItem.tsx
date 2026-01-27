@@ -7,7 +7,7 @@ const AddToDoItem = ({
   handleAddTask: (task: Task) => void;
 }) => {
   const [inputValue, setInputValue] = useState("");
-  const [priority, setPriority] = useState("low");
+  const [priority, setPriority] = useState("Low");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,9 +42,11 @@ const AddToDoItem = ({
           placeholder="What do you need to do?"
           onChange={handleOnChange}
           value={inputValue}
+          role="textbox"
           required
         />
         <select
+          role="combobox"
           className="border rounded-xl border-slate-300 text-slate-400 px-3 py-2 ml-2 text-[12px] appearance-none"
           value={priority}
           onChange={handlePriorityChange}
@@ -56,6 +58,7 @@ const AddToDoItem = ({
       </div>
       <button
         type="submit"
+        role="button"
         className="w-full mt-2 bg-slate-900 text-white py-2 rounded-xl dark:bg-blue-500"
       >
         Add task
