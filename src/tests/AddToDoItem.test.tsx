@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import AddToDoItem from "./AddToDoItem";
+import AddToDoItem from "../components/AddToDoItem";
 
 describe("AddToDoItem Component", () => {
   const mockHandleAddTask = jest.fn();
