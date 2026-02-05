@@ -45,5 +45,5 @@ describe("Dropdown component", () => {
 - queryByText returns null
 
 - If you're asserting presence -> getBy*
-- If you're assertingn absence -> queryBy*
+- If you're asserting absence -> queryBy*
 */
