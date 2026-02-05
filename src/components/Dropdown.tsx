@@ -12,6 +12,8 @@ const Dropdown = ({
   return (
     <div className="dropdown h-0">
       <button
+        role="button"
+        aria-label="Open sort menu"
         onClick={() => {
           setDropdownOpen(!dropdownOpen);
         }}
@@ -30,6 +32,7 @@ w-32"
         >
           {" "}
           <button
+            role="button"
             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
             onClick={() => {
               handleSelectedPriorityOption("High");
@@ -39,6 +42,7 @@ w-32"
             High
           </button>{" "}
           <button
+            role="button"
             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
             onClick={() => {
               handleSelectedPriorityOption("Medium");
@@ -48,6 +52,7 @@ w-32"
             Medium
           </button>{" "}
           <button
+            role="button"
             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
             onClick={() => {
               handleSelectedPriorityOption("Low");
