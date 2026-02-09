@@ -33,6 +33,7 @@ w-32"
           {" "}
           <button
             role="button"
+            aria-label="Selected high priority"
             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
             onClick={() => {
               handleSelectedPriorityOption("High");
@@ -43,6 +44,7 @@ w-32"
           </button>{" "}
           <button
             role="button"
+            aria-label="Selected medium priority"
             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
             onClick={() => {
               handleSelectedPriorityOption("Medium");
@@ -53,6 +55,7 @@ w-32"
           </button>{" "}
           <button
             role="button"
+            aria-label="Selected low priority"
             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
             onClick={() => {
               handleSelectedPriorityOption("Low");

@@ -33,6 +33,28 @@ describe("Dropdown component", () => {
     expect(screen.getByText("Medium")).toBeInTheDocument();
     expect(screen.getByText("Low")).toBeInTheDocument();
   });
+
+  it("when selecting an option it calls the mockhandler and closes", () => {
+    render(
+      <Dropdown
+        handleSelectedPriorityOption={mockHandleSelectedPriorityOption}
+      />
+    );
+
+    const dropdownBtn = screen.getByRole("button", { name: /Open sort menu/i });
+
+    fireEvent.click(dropdownBtn);
+
+    const highPriorityOption = screen.getByRole("button", {
+      name: /Selected high priority/i,
+    });
+
+    fireEvent.click(highPriorityOption);
+
+    expect(mockHandleSelectedPriorityOption).toHaveBeenCalledTimes(1);
+    expect(mockHandleSelectedPriorityOption).toHaveBeenCalledWith("High");
+    expect(screen.queryByText("High")).not.toBeInTheDocument();
+  });
 });
 
 /*
