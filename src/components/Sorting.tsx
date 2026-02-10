@@ -4,7 +4,6 @@ export const handleSelectedPriorityOption = (
   tasks: Task[],
   option: string
 ): Task[] => {
-  console.log("Sorting option selected:", option);
   const priorityOrder = { high: 1, medium: 2, low: 3 }; // assigning a numeric weight to each priority
 
   const sortedTasks = [...tasks].sort((a, b) => {
@@ -41,3 +40,5 @@ export const handleSelectedPriorityOption = (
 
   return sortedTasks;
 };
+
+

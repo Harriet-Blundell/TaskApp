@@ -15,7 +15,7 @@ describe("ToDoItem Component", () => {
 
   beforeEach(() => jest.clearAllMocks());
 
-  it("renders thet ToDoItem component", () => {
+  it("renders the ToDoItem component", () => {
     render(
       <ToDoItem
         task={task}
