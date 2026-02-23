@@ -1,8 +1,9 @@
 const PRIORITIES = ["high", "medium", "low"] as const; // types disappear at runtime
+type Priority = typeof PRIORITIES[number];
 
 export const normalizePriority = (taskPriority: string) => {
     const lowerCaseTaskPriority = taskPriority.toLowerCase();
-    if (lowerCaseTaskPriority === "high" || lowerCaseTaskPriority === "medium" || lowerCaseTaskPriority === "low") {
+    if (PRIORITIES.includes(lowerCaseTaskPriority as Priority)) {
         return lowerCaseTaskPriority;
     } else {
         return "unknown"
