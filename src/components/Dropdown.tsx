@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { handleSelectedPriorityOption } from "@/types";
+import Image from "next/image";
 const sortByImg = "../sort-by.png";
 
 const Dropdown = ({
@@ -18,7 +19,7 @@ const Dropdown = ({
           setDropdownOpen(!dropdownOpen);
         }}
       >
-        <img
+        <Image
           width="20"
           src={sortByImg}
           className="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer"
