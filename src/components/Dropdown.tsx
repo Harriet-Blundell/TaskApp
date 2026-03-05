@@ -37,7 +37,7 @@ w-32"
             aria-label="Selected high priority"
             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
             onClick={() => {
-              handleSelectedPriorityOption("High");
+              handleSelectedPriorityOption("high");
               setDropdownOpen(false);
             }}
           >
@@ -48,7 +48,7 @@ w-32"
             aria-label="Selected medium priority"
             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
             onClick={() => {
-              handleSelectedPriorityOption("Medium");
+              handleSelectedPriorityOption("medium");
               setDropdownOpen(false);
             }}
           >
@@ -59,7 +59,7 @@ w-32"
             aria-label="Selected low priority"
             className="block w-full px-4 py-2 text-left text-white hover:bg-gray-100 hover:text-black"
             onClick={() => {
-              handleSelectedPriorityOption("Low");
+              handleSelectedPriorityOption("low");
               setDropdownOpen(false);
             }}
           >

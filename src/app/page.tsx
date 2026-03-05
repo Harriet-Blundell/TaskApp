@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "@/components/Header";
 import RootLayout from "./layout";
 import ToDoList from "@/components/ToDoList";
 import AddToDoItem from "@/components/AddToDoItem";
 import { useTasks } from "@/utils/useTasks";
+import { getPriorityComparator } from "@/utils/taskSorting";
 
 const Home = () => {
   const {
@@ -17,16 +18,15 @@ const Home = () => {
     numOfCompletedTasks,
   } = useTasks();
 
-  const [sortedTasks, setSortedTasks] = useState(tasks);
+  // 1. Store the selected sort option in state
+  const [sortOption, setSortOption] = useState<"high" | "medium" | "low" | "">("");
 
-  const handleSortedTasksChange = (newSortedTasks: any[]) => {
-    setSortedTasks(newSortedTasks);
-  };
+  // 2. Compute sortedTasks based on tasks and sortOption
+  const sortedTasks = sortOption
+    ? [...tasks].sort(getPriorityComparator(sortOption))
+    : tasks;
 
-  useEffect(() => {
-    setSortedTasks(tasks);
-  }, [tasks]);
-
+  // 3. Pass sortOption and setSortOption to Header
   return (
     <div className="md: p-4 dark:bg-gray-900 min-h-screen dark:text-white">
       <div className="flex flex-col justify-center">
@@ -34,7 +34,8 @@ const Home = () => {
           numOfTasks={numOfTasks}
           numOfCompletedTasks={numOfCompletedTasks}
           tasks={sortedTasks}
-          onSortedTasksChange={handleSortedTasksChange}
+          sortOption={sortOption}
+          setSortOption={setSortOption}
         />
         <AddToDoItem handleAddTask={handleAddTask} />
         <ToDoList

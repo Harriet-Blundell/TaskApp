@@ -6,4 +6,4 @@ export interface Task {
     created_at: string;
 }
 
-export type handleSelectedPriorityOption = (option: string) => void;
+export type handleSelectedPriorityOption = (option: "high" | "medium" | "low" | "") => void;

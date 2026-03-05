@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Task } from "../types";
 
 const ToDoItem = ({
@@ -20,7 +21,7 @@ const ToDoItem = ({
           className="group w-16 pr-5"
           onClick={() => handleDeleteTask(task.id)}
         >
-          <img
+          <Image
             width="15"
             height="15"
             src="https://img.icons8.com/material-outlined/24/FA5252/cancel--v1.png"
@@ -28,7 +29,7 @@ const ToDoItem = ({
             aria-label={`Mark ${title} as deleted`}
             className="cursor-pointer block group-hover:hidden"
           />
-          <img
+          <Image
             width="15"
             height="15"
             src="https://img.icons8.com/material-rounded/24/FA5252/cancel--v1.png"
